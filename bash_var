@@ -1,0 +1,22 @@
+#!/bin/bash
+export TERMINATOR_CONFIG_RESERVE="${HOME}/data/etc/terminator-config"
+
+export VIEDITOR="vim"
+
+# for schedules & journalling
+export SCHED_HOME="${HOME}/data/schedule"
+export JOURNAL_HOME="${HOME}/data/journal"
+
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64/"
+
+# required by apache tomcat server
+# export CATALINA_HOME="/home/amirh/data/java/apache-tomcat-9.0.82"
+# export JRE_HOME="${JAVA_HOME}" # set this in $CATALINA_HOME/bin/setenv.sh , not here!
+
+# android sdk debian builds
+# export ANDROID_HOME=$(whereis android-sdk | awk '{print $2;}' )
+
+# android sdk google's builds
+# export ANDROID_HOME="/home/amirh/android_shit"
+
+# export PHONE_NO="+989231716394"

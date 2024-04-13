@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# customised scripts
+# if [[ -z $PATH_SET || "${PATH_SET}" != "y" ]]; then
+	# export PATH="${PATH}:~/scripts/:/home/amirh/data/etc/cmdline-tools/bin/"
+	# export PATH="${PATH}:~/home/amirh/data/etc/gradle-8.4/bin/"
+	# export PATH_SET='y'
+# fi
+
+WIFICONNECTION='AmirAsal'
+
+TERMINATOR_CONFIG_RESERVE="${HOME}/data/etc/terminator_themes"
+
+mkdir -p $TERMINATOR_CONFIG_RESERVE
+
+# alias backdarktheme="cp ~/.config/terminator/config ${TERMINATOR_CONFIG_RESERVE}/dark_theme "
+# alias backlighttheme="cp ~/.config/terminator/config ${TERMINATOR_CONFIG_RESERVE}/light_theme"
+
+# change terminator light
+# alias ctl="cp ${TERMINATOR_CONFIG_RESERVE}/light_theme ~/.config/terminator/config"
+
+# setting schedules and journals with simple commands
+alias sched="${VIEDITOR} ${SCHED_HOME}/$(date | awk '{print $4 "-" $3  "-" $2}' | tr -t [:upper:] [:lower:] ).txt"
+alias jorn="${VIEDITOR} ${JOURNAL_HOME}/$(date | awk '{print $4 "-" $3  "-" $2}' | tr -t [:upper:] [:lower:] ).txt"
+
+# for easier access
+alias pad="mousepad"
+
+# change terminator dark
+alias ctd="cp ${TERMINATOR_CONFIG_RESERVE}/dark_theme ~/.config/terminator/config"
+
+# copy to clipboard
+alias cx="xclip -selection clipboard"
+
+# paste from clipboard
+alias px="xclip -selection clipboard -o"
+
+alias music='thunar ~/Music/'
+alias conn="nmcli c u ${WIFICONNECTION}"
+alias mank="man -k"
+alias make="make -s"
+alias rm="rm -I"
+alias py3='python3'
+alias cd='cd -P'
+alias ll='ls -lshkAp'
+alias ice='icecat -no-remote -ProfileManager 1>/dev/null 2>&1 &'
+alias ffx='firefox -no-remote -ProfileManager 1>/dev/null 2>&1 &'
+alias cdc='cd -'
+alias mkcee='~/scripts/mkcee.sh'
+alias mkcpp='~/scripts/mkcpp.sh'
+# alias ice='~/data/compiled/icecat/icecat 1>/dev/null 2>&1 &'
+alias lsf='ls -alpsh -1 $1 | grep $1'
+alias eclipse='~/eclipse/java-2023-125/eclipse/eclipse 1>/dev/null 2>&1 &'
+alias pyload='~/.local/bin/pyload'
+alias lns='~/scripts/lns.sh'
+alias cdcurr='cd -P ~/curr'
+alias curr='rm ~/curr && ln -s -T $(pwd) ~/curr && echo "~/curr -> $(pwd)"'
+alias sc="~/scripts/sc.sh"
+alias getal="~/scripts/getal.sh"
+alias dt="date +%Y-%m-%d\ \(%H:%M\) | cx && px"
+alias upsrc="source ~/.bashrc"
+alias disconn="nmcli c d ${WIFICONNECTION}"
+alias valsha="~/scripts/validate_sha.sh"
